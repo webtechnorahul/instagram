@@ -1,0 +1,134 @@
+.post-create-card {
+  background-color: #ffffff;
+  border: 1px solid #dbdbdb;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 10px auto 80px auto; /* Margin top added to avoid overlaying under the Navbar */
+  padding: 24px;
+  height: fit-content;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.post-card-title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #262626;
+  border-bottom: 1px solid #efefef;
+  padding-bottom: 12px;
+}
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Image Upload Placeholder Styles */
+.image-upload-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Generates a perfect Instagram square layout box */
+  border: 2px dashed #dbdbdb;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  background-color: #fafafa;
+}
+
+.upload-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  color: #8e8e8e;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.upload-icon {
+  font-size: 40px;
+  color: #0095f6;
+}
+
+.hidden-file-input {
+  display: none;
+}
+
+/* Image Preview Layout Styles */
+.image-preview-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.uploaded-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.remove-image-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: none;
+  color: #ffffff;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.remove-image-btn:hover {
+  background-color: rgba(255, 0, 0, 0.8);
+}
+
+/* Caption Input Form Styles */
+.caption-textarea {
+  width: 100%;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 14px;
+  color: #262626;
+  resize: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.caption-textarea:focus {
+  border-color: #a8a8a8;
+}
+
+/* Action Share Button Styles */
+.share-post-btn {
+  background-color: #0095f6;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.share-post-btn:hover {
+  background-color: #1877f2;
+}
+
+.share-post-btn:disabled {
+  background-color: #b2dffc;
+  cursor: not-allowed;
+}
