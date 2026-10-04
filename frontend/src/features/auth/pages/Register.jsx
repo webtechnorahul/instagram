@@ -4,6 +4,8 @@ import "../style/Auth.css";
 import { useAuth } from "../hooks/useAuth";
 import { useDispatch } from "react-redux";
 import cookies from 'js-cookie'
+
+// Renders the sign-up form and creates an account from the entered details.
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate=useNavigate();
@@ -23,7 +25,7 @@ const Register = () => {
     }
   },[])
 
-  // Handler to update state dynamically when a user types
+  // Updates the changed form field while preserving the other entered values.
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -32,6 +34,7 @@ const Register = () => {
     }));
   };
 
+  // Submits the registration details and navigates to the dashboard.
   const handleSubmit = async(e) => {
     e.preventDefault();
     const response=await Register({

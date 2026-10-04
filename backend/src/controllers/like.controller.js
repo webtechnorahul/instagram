@@ -1,6 +1,8 @@
 
 import likeModel from '../models/like.model.js';
 import postModel from '../models/post.model.js'
+
+// Adds a like from the signed-in user to the requested post.
 export async function userLikedPost(req, res) {
     const userId = req.user;
     const postId = req.params.postId;
@@ -20,6 +22,8 @@ export async function userLikedPost(req, res) {
     }
     
 }
+
+// Removes the signed-in user's like from the requested post.
 export async function userUnlikedPost(req,res){
 
     const userId = req.user;
@@ -35,6 +39,8 @@ export async function userUnlikedPost(req,res){
     }
     return res.status(200).json({message:"unliked this post",like:isLiked});
 }
+
+// Returns the number of likes recorded for the requested post.
 export async function totlalikesInPost(req, res) {
     const userId = req.user;
     const postId = req.params.postId;

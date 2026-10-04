@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+// Defines the author, image URL, and caption saved for each post.
 const postSchema=mongoose.Schema({
     userId:{
     type:mongoose.Schema.Types.ObjectId,

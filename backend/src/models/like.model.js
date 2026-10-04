@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+// Stores post likes and enforces one like per user/post pair.
 const likeSchema=mongoose.Schema({
     userId:{
         type:mongoose.Schema.Types.ObjectId,

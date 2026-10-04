@@ -1,12 +1,12 @@
 import {api} from './api.js'
 
-// Fetch all posts
+// Retrieves the feed of posts from the backend.
 export async function allPost() {
     const response = await api.get("/allPost");
     return response.data;
 }
 
-// Create a new post
+// Sends a caption and image as multipart form data to the backend.
 export async function createPost({ caption, image }) {
 
     const formData=new FormData()
@@ -36,4 +36,3 @@ export async function createPost({ caption, image }) {
 // }
 
 export default api;
-

@@ -2,6 +2,8 @@ import userModel from "../models/auth.models.js";
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 import { config } from "../config/config.js";
+
+// Registers a user, stores a password hash, and creates an authenticated session.
 export async function userRegister(req,res){
   const isUserExist=await userModel.findOne({$or:[
     {
@@ -31,6 +33,8 @@ export async function userRegister(req,res){
     res.cookie("token",token);
    res.status(201).json({message:"user register successful",user:newUser});
 }
+
+// Verifies login credentials and creates a session for the matching user.
 export async function userLogin(req,res) {
     const {password,email,username}=req.body;
     const isUserExist=await userModel.findOne({$or:[
@@ -61,6 +65,7 @@ export async function userLogin(req,res) {
     res.status(200).json({message:"login successful",user:isUserExist})
 }
 
+// Returns the authenticated user's profile without exposing their password.
 export async function getMe(req,res){
   const userId=req.user;
   const isUserExist=await userModel.findById({_id:userId}).select("-password");

@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import "../style/Auth.css";
 import { useAuth } from "../hooks/useAuth";
 import cookies from 'js-cookie'
+
+// Renders the login form and redirects to the dashboard after successful sign-in.
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate=useNavigate();
@@ -21,7 +23,7 @@ const Login = () => {
     }
   },[])
 
-  // Async form submit handler use
+  // Sends the entered credentials to the authentication hook.
   const handleSubmit = async (e) => {
     e.preventDefault();
       const response = await Login({ email, password });

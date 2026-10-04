@@ -7,6 +7,8 @@ import jwt from 'jsonwebtoken'
 const imagekit=new ImageKit({
     privateKey:config.IMAGEKIT_PRIVATE_KEY
 })
+
+// Uploads the submitted image and saves a post for the authenticated user.
 export async function createPost(req,res){
     const userId=req.user;
     const file=await imagekit.files.upload({
@@ -22,6 +24,7 @@ export async function createPost(req,res){
     res.status(201).json({message:"post send successfully",post:newPost})
 }
 
+// Loads all posts and marks which ones the authenticated user has liked.
 export async function allPost(req,res) {
     const userId=req.user;
     const allpostData=await Promise.all((await postModel.find().populate('userId').lean()).map(async(post)=>{
@@ -36,6 +39,7 @@ export async function allPost(req,res) {
     res.status(200).json({message:"fetch all post",post:allpostData})
 }
 
+// Returns posts created by the authenticated user.
 export async function getMyPost(req,res){
     const userId=req.user;
     const findMyPost=await postModel.find({userId:userId})
@@ -46,6 +50,7 @@ export async function getMyPost(req,res){
     res.status(200).json({message:"fetch successful",post:findMyPost})
 }
 
+// Returns post details after checking that the authenticated user owns the post.
 export async function postDetail(req,res){
     const userId=req.user;
     const postId=req.params.id;

@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 
+// Defines the user profile and account credential fields stored in MongoDB.
 const userSchema = new mongoose.Schema({
   username: { 
     type: String, 
@@ -26,6 +27,7 @@ const userSchema = new mongoose.Schema({
   }
 }, { timestamps: true });
 
+// Provides the model used to create and query user accounts.
 const userModel = mongoose.model('User', userSchema);
 
 export default userModel;

@@ -1,5 +1,6 @@
 import mongoose from 'mongoose'
 
+// Stores follower/followee pairs and prevents duplicate follow relationships.
 const followSchema=mongoose.Schema({
     follower:{
         type:mongoose.Schema.Types.ObjectId,

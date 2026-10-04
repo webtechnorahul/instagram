@@ -5,6 +5,7 @@ import { FiSearch } from "react-icons/fi";
 import { BsChatSquareTextFill } from "react-icons/bs";
 import { useNavigate } from 'react-router-dom';
 
+// Renders the bottom navigation and routes users to the main app sections.
 export default function Footer() {
   const [activeTab, setActiveTab] = useState('reels');
   const navigate=useNavigate();

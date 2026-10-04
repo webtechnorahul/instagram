@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import userModel from "../models/auth.models.js";
 import followModel from "../models/follow.model.js";
 
+// Creates a follow relationship between the signed-in user and the requested account.
 export async function followUser(req,res) {
     const followee=req.params.followerId;
     const follower=req.user;
@@ -30,6 +31,7 @@ export async function followUser(req,res) {
     }
 }
 
+// Removes the signed-in user's follow relationship with the requested account.
 export async function unfollowUser(req,res){
     const followerId=req.user;
     const followeeId=req.params.followeeid;

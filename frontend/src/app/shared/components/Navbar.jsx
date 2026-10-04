@@ -1,6 +1,8 @@
 import React from 'react'
 import {FaRegHeart} from 'react-icons/fa'
 import "../style/Navbar.css"
+
+// Renders the shared Instagram feed header.
 const Navbar = () => {
   return (
         <div className="feed-header">

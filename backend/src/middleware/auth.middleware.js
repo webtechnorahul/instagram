@@ -2,6 +2,7 @@ import jwt from 'jsonwebtoken'
 import { config } from '../config/config.js';
 
 
+// Verifies the session cookie, attaches its user ID to the request, and continues.
 export const identifyUser=(req,res,next)=>{
     const token=req.cookies.token;
         if(!token){

@@ -6,10 +6,12 @@ import { FaShareAlt } from "react-icons/fa";
 import { CiBookmark } from "react-icons/ci";
 import '../style/Post.css'
 import { useLike } from '../hooks/useLike';
+// Renders one post with its author, image, engagement actions, and comment input.
 const Post = ({post}) => {
     
     
     const {likedPost,unLikedPost,totalPostLikes,totalLike,setlikespostonClikc,likespostonClikc}=useLike();
+    // Toggles the post's like state and updates the displayed like count.
     const likePost=async(postId)=>{
         if(post.isLiked){
             await unLikedPost(postId);
@@ -21,6 +23,7 @@ const Post = ({post}) => {
         }
     }
 
+    // Fetches the latest like count for this post.
     async function callLikePost(){
         const response=await totalPostLikes(post._id);
     }

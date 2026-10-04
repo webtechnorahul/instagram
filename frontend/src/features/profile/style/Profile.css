@@ -1,0 +1,409 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.profile-page {
+  width: 100%;
+  max-width: 935px;
+  margin: auto;
+  padding: 30px 20px;
+  color: #111;
+}
+
+/* ================= PROFILE ================= */
+
+.profile-header {
+  display: flex;
+  align-items: flex-start;
+  padding: 20px 0 35px;
+}
+
+.profile-photo {
+  width: 290px;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-photo img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-content {
+  flex: 1;
+}
+
+.profile-name-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.profile-name-row h2 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.desktop-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.desktop-buttons button,
+.mobile-actions button {
+  border: 0;
+  background: #efefef;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.desktop-buttons .settings {
+  padding: 8px 12px;
+  font-size: 18px;
+}
+
+/* ================= STATS ================= */
+
+.desktop-stats {
+  display: flex;
+  gap: 35px;
+  margin-bottom: 25px;
+  font-size: 15px;
+}
+
+.desktop-stats b {
+  margin-right: 4px;
+}
+
+/* ================= BIO ================= */
+
+.bio {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.bio strong {
+  display: block;
+  margin-bottom: 3px;
+}
+
+/* ================= MOBILE STATS ================= */
+
+.mobile-stats,
+.mobile-actions {
+  display: none;
+}
+
+/* ================= HIGHLIGHTS ================= */
+
+.highlights {
+  display: flex;
+  gap: 25px;
+  padding: 5px 0 35px;
+  overflow-x: auto;
+}
+
+.highlight {
+  min-width: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+}
+
+.highlight-circle {
+  width: 70px;
+  height: 70px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+
+/* ================= TABS ================= */
+
+.profile-tabs {
+  height: 55px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+
+.profile-tabs button {
+  height: 55px;
+  min-width: 70px;
+  border: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: #777;
+  cursor: pointer;
+}
+
+.profile-tabs button.active {
+  color: #111;
+  border-top: 1px solid #111;
+}
+
+.profile-tabs span {
+  font-size: 18px;
+}
+
+.profile-tabs label {
+  font-size: 11px;
+}
+
+/* ================= POSTS ================= */
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.post {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.post img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.post:hover img {
+  transform: scale(1.04);
+}
+
+.post-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  color: white;
+  font-weight: 600;
+  opacity: 0;
+  transition: 0.25s;
+}
+
+.post:hover .post-overlay {
+  opacity: 1;
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 768px) {
+
+  .profile-page {
+    padding: 20px 15px;
+  }
+
+  .profile-photo {
+    width: 220px;
+  }
+
+  .profile-photo img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-name-row {
+    gap: 10px;
+  }
+
+  .desktop-buttons button {
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+
+  .desktop-stats {
+    gap: 20px;
+  }
+
+  .highlights {
+    gap: 18px;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+  .profile-page {
+    padding: 0;
+  }
+
+  /* HEADER */
+
+  .profile-header {
+    padding: 20px 15px 12px;
+  }
+
+  .profile-photo {
+    width: 95px;
+    flex-shrink: 0;
+  }
+
+  .profile-photo img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .profile-name-row {
+    margin-bottom: 8px;
+  }
+
+  .profile-name-row h2 {
+    font-size: 17px;
+  }
+
+  .desktop-buttons,
+  .desktop-stats {
+    display: none;
+  }
+
+  .bio {
+    font-size: 13px;
+  }
+
+  /* STATS */
+
+  .mobile-stats {
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 12px 0;
+  }
+
+  .mobile-stats div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+  }
+
+  .mobile-stats b {
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+
+  /* ACTIONS */
+
+  .mobile-actions {
+    display: flex;
+    gap: 6px;
+    padding: 10px 15px;
+  }
+
+  .mobile-actions button {
+    flex: 1;
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .mobile-actions button:last-child {
+    flex: 0 0 40px;
+  }
+
+  /* HIGHLIGHTS */
+
+  .highlights {
+    padding: 8px 15px 20px;
+    gap: 18px;
+    scrollbar-width: none;
+  }
+
+  .highlights::-webkit-scrollbar {
+    display: none;
+  }
+
+  .highlight {
+    min-width: 60px;
+  }
+
+  .highlight-circle {
+    width: 60px;
+    height: 60px;
+    font-size: 22px;
+  }
+
+  /* TABS */
+
+  .profile-tabs {
+    gap: 0;
+    justify-content: space-around;
+  }
+
+  .profile-tabs button {
+    flex: 1;
+  }
+
+  .profile-tabs label {
+    display: none;
+  }
+
+  /* POSTS */
+
+  .posts-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .post-overlay {
+    display: none;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 380px) {
+
+  .profile-photo {
+    width: 85px;
+  }
+
+  .profile-photo img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .profile-name-row h2 {
+    font-size: 15px;
+  }
+
+  .bio {
+    font-size: 12px;
+  }
+
+  .highlight {
+    min-width: 55px;
+  }
+
+  .highlight-circle {
+    width: 55px;
+    height: 55px;
+  }
+}

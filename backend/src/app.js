@@ -9,8 +9,10 @@ import likeRouter from './routers/like.router.js';
 
 const app=express();
 
+// Keeps uploaded files in memory for the post image-upload handler.
 const upload=multer({storage:multer.memoryStorage()})
 
+// Configures request parsing, credentialed CORS, cookies, and API route groups.
 app.use(express.json());
 app.use(cors({
     origin:"http://localhost:5173",

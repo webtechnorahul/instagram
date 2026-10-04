@@ -9,6 +9,7 @@ if(!process.env.IMAGEKIT_PRIVATE_KEY){
     console.log("imagekit private key not provided")
 }
 
+// Collects environment-backed settings used by the server and integrations.
 export const config={
     "PORT":process.env.PORT ||8080,
     "JWT_SECRET":process.env.JWT_SECRET,

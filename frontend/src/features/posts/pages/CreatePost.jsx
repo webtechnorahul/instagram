@@ -5,6 +5,7 @@ import { AiOutlineCloudUpload, AiOutlineClose } from 'react-icons/ai';
 import '../style/CreatePost.css';
 import {usePost} from '../hooks/usePost';
 
+// Renders the image-and-caption form used to publish a new post.
 export default function CreatePost() {
   const [caption, setCaption] = useState('');
   const [imagePreview, setImagePreview] = useState(null); 
@@ -12,14 +13,14 @@ export default function CreatePost() {
   const imageInputFieldRef = useRef(null);
   const { createNewPost } = usePost();
 
-  // 1. Manually trigger the hidden file input when the box is clicked
+  // Opens the hidden file picker when the upload area is clicked.
   const handleBoxClick = () => {
     if (imageInputFieldRef.current) {
       imageInputFieldRef.current.click();
     }
   };
 
-  // 2. Read the file from the input and generate a preview
+  // Reads the selected image and creates a temporary URL for its preview.
   const handleImageChange = (e) => {
     const file = e.target.files[0]; // Gets the first selected file
     if (file) {
@@ -27,7 +28,7 @@ export default function CreatePost() {
     }
   };
 
-  // 3. Completely clear the input ref and state
+  // Clears the selected file and preview, preventing the close click from bubbling.
   const removeImage = (e) => {
     if (e) e.stopPropagation(); // Prevents reopening the file picker when clicking the close button
     if (imageInputFieldRef.current) {
@@ -36,6 +37,7 @@ export default function CreatePost() {
     setImagePreview(null); 
   };
 
+  // Validates the selected image, publishes the post, and resets the form on success.
   const handleShare = async (e) => {
     e.preventDefault();
     

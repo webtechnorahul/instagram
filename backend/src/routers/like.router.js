@@ -4,6 +4,7 @@ import { userLikedPost,userUnlikedPost,totlalikesInPost } from '../controllers/l
 
 const likeRouter=express.Router();
 
+// Requires authentication for liking posts and reading their like counts.
 /**
  * @route /api/post/like/:postId
  * @description like one post
@@ -12,6 +13,7 @@ const likeRouter=express.Router();
 likeRouter.post("/like/:postId",identifyUser,userLikedPost)
 likeRouter.get("/totalLikes/:postId",identifyUser,totlalikesInPost)
 
+// Requires authentication before removing a post like.
 /**
  * @route /api/post/like/:postId
  * @description like one post
