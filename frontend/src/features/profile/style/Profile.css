@@ -175,7 +175,7 @@
   gap: 4px;
 }
 
-.post {
+.profile-page .posts-grid .post {
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -183,14 +183,14 @@
   cursor: pointer;
 }
 
-.post img {
+.profile-page .posts-grid .post img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
 
-.post:hover img {
+.profile-page .posts-grid .post:hover img {
   transform: scale(1.04);
 }
 
@@ -208,7 +208,7 @@
   transition: 0.25s;
 }
 
-.post:hover .post-overlay {
+.profile-page .posts-grid .post:hover .post-overlay {
   opacity: 1;
 }
 

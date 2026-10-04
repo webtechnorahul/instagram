@@ -2,10 +2,11 @@
 
 .post{
     width:660px;
+    max-width:100%;
     display: flex;
     flex-direction: column;
-    border-block:1px solid black;
     margin-block:0.3rem;
+    background-color: rgb(247, 246, 246);
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -39,11 +40,11 @@
 .post-username { 
     font-size: 14px; 
     font-weight: 600; 
-    color: #111; 
+    color: var(--text-h);
 } 
 .post-time { 
     font-size: 12px; 
-    color: #777; 
+    color: var(--text);
 } 
 .post-options-btn { 
     border: none; 
@@ -55,18 +56,23 @@
 
 .post-image{
     width:100%;
-    padding-top:1rem;
+    max-height: 500px;
+    border: 1px solid rgb(201, 197, 197);
 }
 /* card top complete */
 
 /* image show post in card*/
 .post-content{
     width: 100%;
-    height: 100%;
+     padding-top:1rem;
+    
+    padding-bottom:0.5rem;
+    max-height: 500px;
     object-fit: cover;
 }
 .card-bottom{
     width: 100%;
+    padding-top:1.5rem ;
 }
 .icons-card{
     display: flex;
@@ -79,6 +85,7 @@
     text-align: center;
     display: flex;
     flex-direction: column;
+    color: var(--text-h);
 }
 .icons-card p{
     font-size: 1rem;
@@ -126,15 +133,16 @@
     .post{
         width:310px;
     }
+    .card-bottom{
+        padding-top: 0rem;
+    }
+    .comment-box{
+    display: none;
+   } 
     .icons-card span{
         font-size: 1.5rem;
     }
     .icons-card p{
         font-size:0.7rem;
     }
-}
-@media (max-width:425px) {
-   .comment-box{
-    display: none;
-   } 
 }

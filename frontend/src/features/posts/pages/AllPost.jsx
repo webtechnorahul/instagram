@@ -3,7 +3,6 @@ import { usePost } from '../hooks/usePost'
 import { useDispatch, useSelector } from 'react-redux'
 import Post from '../components/Post'
 
-
 // Loads the feed and renders each result with the shared post card component.
 const AllPost = () => {
    const dispatch=useDispatch()
